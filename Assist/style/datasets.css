@@ -335,6 +335,7 @@ input[id="menuFilter"]:checked + .column1 #filter {
   color: #b6b6b6;
   font-size: 12px;
   padding: 0 15px 0 0;
+  cursor: pointer;
 }
 #filter input[id="topicsOption"]:checked + .item .option {
   max-height: 600px;
@@ -474,10 +475,9 @@ input[id="menuFilter"]:checked + .column1 #filter {
   border-radius: 5px;
   width: 120px;
 }
-#dataset .items .item .info .button img {
-  height: 15px;
-  width: 15px;
-  background-color: green;
+#dataset .items .item .info .button svg {
+  height: auto;
+  width: 16px;
   margin-right: 5px;
 }
 #dataset .items .item .info .button h6 {
@@ -965,11 +965,16 @@ footer .sectionSecound .log svg {
   }
   #dataset .items .item .info .button {
     padding: 5px 14px 6px 6px;
+    width: 128px;
   }
-  #dataset .items .item .info .button img {
-    height: 15px;
-    width: 17px;
+  #dataset .items .item .info .button svg {
+    height: auto;
+    width: 16px;
   }
+  #dataset .items .item .info .button svg .s0 {
+    fill: white;
+  }
+
   #dataset .items .item .info .button h6 {
     font-size: 12px;
   }
