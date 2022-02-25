@@ -76,6 +76,10 @@
     }
   }
   resize() {
+    this.items.style.right = this.postions[0];
+    this.merge = this.items.getBoundingClientRect().x;
+    console.log(this.step)
+    console.log(this.postions)
     this.items.style.left = `0px`;
     this.item = this.items.querySelectorAll(".item");
     this.postions = this.allPostion();
@@ -87,7 +91,6 @@
     }
     this.postion = 0;
     this.items.style.left = `initial`;
-    this.items.style.right = this.postions[0];
   }
   move() {
     setInterval(() => {
