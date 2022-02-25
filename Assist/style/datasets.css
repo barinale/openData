@@ -1,8 +1,917 @@
 @font-face {
   font-family: "Monserrat-Regular";
   src: url("../font/Montserrat-Regular.ttf");
+  font-weight: 100;
 }
 @font-face {
   font-family: "Montserrat-Bold";
   src: url("../font/Montserrat-Bold.ttf");
+  font-family: 100;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+.containers {
+  width: 90%;
+  margin: auto;
+}
+ul {
+  list-style: none;
+}
+body {
+  background-color: #efefef;
+}
+/* section header */
+
+header {
+  width: 100%;
+  position: relative;
+  background-color: #1b1b1b;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+header .logoHeader svg {
+  height: 38px;
+  width: 75.12px;
+}
+header .sectionHeader {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .sectionMenu input[id="MenuIcons"]:checked + nav {
+  left: 0;
+}
+header .sectionMenu nav {
+  position: absolute;
+  top: 60px;
+  left: -100%;
+  width: 100%;
+  transition: 0.2s all;
+  background-color: rgba(216, 216, 216, 0.7);
+  z-index: 10;
+}
+header .sectionMenu nav ul li {
+  padding: 16px 14px;
+  transition: 0.2s all;
+}
+header .sectionMenu nav ul li:not(:last-child):hover {
+  background-color: rgba(216, 216, 216, 1);
+}
+
+header .sectionMenu nav ul li a {
+  font-family: "Montserrat-Bold";
+  letter-spacing: 0;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: lighter;
+}
+header .sectionMenu nav ul li:hover a {
+  color: black;
+}
+header .sectionMenu nav ul li:last-child {
+  color: white;
+  font-family: "Montserrat-Bold";
+  letter-spacing: 0;
+  line-height: 18px;
+  font-size: 14px;
+}
+header .sectionMenu nav ul li:last-child > span {
+  position: relative;
+  height: 29px;
+  width: 84px;
+  border-radius: 4px;
+  background-color: rgba(216, 216, 216, 0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  cursor: pointer;
+}
+header .sectionMenu nav ul li:last-child > span > span {
+  height: 7px;
+  width: 7px;
+  display: block;
+  border-radius: 2px;
+  border: 2px solid #ffffff;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(45deg);
+  margin-left: 10.8px;
+}
+
+header .MenuIcons span {
+  width: 30px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: rgba(216, 216, 216, 0.5);
+  display: block;
+  margin: 5px 0;
+}
+
+/* section Body */
+#datasetsBody {
+  display: grid;
+  grid-template-columns: 0px 30px 1fr 0px;
+  grid-template-areas: ". filter body .";
+}
+#datasetsBody .column1 {
+  background-color: white;
+  grid-area: filter;
+  position: relative;
+  padding-top: 10px;
+}
+#datasetsBody .column2 {
+  background-color: #efefef;
+  grid-area: body;
+}
+#datasetsBody .column1 .menuLinksShow {
+  cursor: pointer;
+  margin: 0 auto 10px auto;
+}
+#datasetsBody .column1 .menuLinksShow span {
+  margin: auto;
+  height: 4px;
+  width: 30px;
+  background-color: #58dd3a;
+  display: block;
+  border-radius: 5px;
+}
+#datasetsBody .column1 .menuLinksShow span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+#filter {
+  position: absolute;
+  width: 190px;
+  left: -180px;
+  background-color: white;
+  transition: 0.2s all;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+input[id="menuFilter"]:checked + .column1 #filter {
+  left: 0;
+}
+.titleHeader {
+  padding-left: 10px;
+}
+.titleHeader h3 {
+  color: #1b1b1b;
+  font-family: "Montserrat-Bold";
+  font-size: 21px;
+  letter-spacing: 0;
+  line-height: 25px;
+  position: relative;
+  font-weight: 100;
+  margin: 25px 0px 26px 0px;
+}
+
+.titleHeader h3:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 32px;
+  height: 3px;
+  border-radius: 2.5px;
+  background-color: #58dd3a;
+}
+/* section Filter Items */
+
+#filter .filterItems .item .titleFilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 15px 15px 0;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+#filter .filterItems .item .titleFilter h3 {
+  color: #1b1b1b;
+  font-size: 14px;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+}
+#filter .filterItems .item .titleFilter span {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  border: 2px solid #d9d9d9;
+  border-radius: 2px;
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(45deg);
+  transition: 0.2s all;
+}
+#filter .filterItems .item {
+  padding-left: 10px;
+}
+#filter .filterItems .item .filterOption {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 0 15px 0 0;
+}
+#filter .filterItems .item:nth-of-type(1) .filterOption img {
+  height: 16px;
+  width: 19px;
+  background-color: green;
+  margin-right: 9px;
+}
+#filter .filterItems .item .filterOption h6 {
+  color: #1b1b1b;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+#filter .filterItems .item .filterOption span {
+  margin-left: auto;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  color: #b6b6b6;
+  font-size: 10px;
+}
+#filter .item .option {
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.2s all;
+}
+#filter .filterItems .item:nth-of-type(2) .showMore {
+  font-family: "Monserrat-Regular";
+  font-weight: 100;
+  color: #b6b6b6;
+  font-size: 12px;
+  padding: 0 15px 0 0;
+}
+#filter input[id="topicsOption"]:checked + .item .option {
+  max-height: 600px;
+}
+#filter input[id="topicsOption"]:checked + .item .titleFilter span {
+  transform: rotate(-135deg);
+}
+#filter input[id="publishersOption"]:checked + .item .option {
+  max-height: 600px;
+}
+#filter input[id="publishersOption"]:checked + .item .titleFilter span {
+  transform: rotate(-135deg);
+}
+
+/* section dateset */
+#dataset {
+  margin-top: 10px;
+}
+#dataset .container {
+  width: 90%;
+  margin: auto;
+}
+.input {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.input input:focus {
+  outline: 0;
+  border: 0;
+}
+
+.input input {
+  border: 0;
+  width: 80%;
+  border-radius: 10px;
+  padding: 14px 10px;
+  font-size: 8px;
+  font-family: "Montserrat-Bold";
+
+  color: black;
+}
+.input img {
+  height: 30px;
+  width: 30px;
+}
+svg .s0 {
+  fill: black;
+}
+#dataset .headerTitle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#dataset .headerTitle img {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  margin-right: 10px;
+}
+#dataset .headerTitle h5 {
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  color: #b6b6b6;
+}
+#dataset .dataFound {
+  color: black;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+#dataset .items .item {
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+#dataset .items .item h4 {
+  padding: 26px 0px 0px 28px;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  font-size: 12px;
+  color: #1b1b1b;
+  margin-bottom: 5px;
+}
+#dataset .items .item p {
+  padding: 0px 0px 0px 28px;
+  color: #1b1b1b;
+  font-family: "Monserrat-Regular";
+  font-weight: 100;
+  font-size: 10px;
+  line-height: 18px;
+  margin-bottom: 15px;
+}
+#dataset .items .item .info {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 9px 0 9px 34px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+#dataset .items .item .info .button {
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  border-radius: 5px;
+  width: 120px;
+}
+#dataset .items .item .info .button img {
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  margin-right: 5px;
+}
+#dataset .items .item .info .button h6 {
+  color: #ffffff;
+  font-family: "Montserrat-Bold";
+  font-size: 10px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+#dataset .items .item .info > span {
+  font-size: 12px;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  color: #1b1b1b;
+  background-color: white;
+  padding: 6px 8px 6px 8px;
+  border-radius: 6px;
+}
+#dataset .items .item .info > span > span {
+  background-color: #eeeeee;
+  padding: 6px 6px;
+  border-radius: 6px;
+  margin-left: 9px;
+}
+#dataset .items .item:nth-of-type(2) .info > span {
+  padding: 6px 0px 6px 8px;
+}
+
+#dataset .items .item:nth-of-type(1) .info .button {
+  background-color: #58dd3a;
+}
+#dataset .items .item:nth-of-type(2) .info .button {
+  background-color: #aedd3a;
+}
+#dataset .items .item:nth-of-type(3) .info .button {
+  background-color: #e45fc7;
+}
+#dataset .items .item:nth-of-type(4) .info .button {
+  background-color: #3a87dd;
+}
+#dataset .items .item:nth-of-type(5) .info .button {
+  background-color: #3addd8;
+}
+#dataset .items .item:nth-of-type(6) .info .button {
+  background-color: #ff7433;
+}
+#dataset .items .item:nth-of-type(7) .info .button {
+  background-color: #dd3a5c;
+}
+#dataset .items .item:nth-of-type(8) .info .button {
+  background-color: #ffb712;
+}
+#dataset .items .item:nth-of-type(9) .info .button {
+  background-color: #623add;
+}
+#dataset .items .item:nth-of-type(10) .info .button {
+  background-color: #cbcbcb;
+}
+#dataset .pagination {
+  margin: 30px 0;
+}
+#dataset .pagination ul {
+  display: flex;
+  align-items: center;
+}
+#dataset .pagination ul li {
+  margin-right: 10px;
+}
+#dataset .pagination ul .mobile {
+  display: none;
+}
+
+#dataset .pagination ul li a {
+  font-size: 10px;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  padding: 10px;
+  background-color: white;
+  color: #1b1b1b;
+  border-radius: 5px;
+  transition: 0.2s all;
+}
+#dataset .pagination ul li a.active {
+  background-color: #58dd3a;
+  color: white;
+}
+#dataset .pagination ul li a {
+  display: flex;
+  align-self: baseline;
+}
+#dataset .pagination ul li a span {
+  height: 10px;
+  width: 10px;
+  border: 2px solid #d9d9d9;
+  border-left: 0;
+  border-bottom: 0;
+  transform: rotate(45deg) translateY(3px);
+  display: block;
+  margin-left: 3px;
+  transition: 0.2s all;
+}
+
+#dataset .pagination ul li a:hover {
+  background-color: #58dd3a;
+  color: white;
+}
+#dataset .pagination ul li a:hover span {
+  border-color: white;
+}
+
+/* section footer */
+footer {
+  border-top: 4px solid #58de3a;
+  background-color: #1b1b1b;
+}
+footer .sectionFirst {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+}
+footer .sectionFirst ul li a {
+  color: #ffffff;
+  font-family: "Monserrat-Regular";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+footer .sectionFirst .logs {
+  margin-top: 20px;
+}
+footer .sectionFirst .logs img {
+  width: 100px;
+  height: 100px;
+}
+footer .sectionSecound {
+  background-color: #141414;
+  margin-top: 10px;
+}
+footer .sectionSecound > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px 0;
+}
+
+footer .sectionSecound .copyright p {
+  color: #ffffff;
+  font-family: "Monserrat-Regular";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+footer .sectionSecound .log svg {
+  width: 60px;
+  height: 20px;
+}
+
+@media (min-width: 425px) {
+  /* search input */
+  input {
+    border: 0;
+    width: 80%;
+    border-radius: 10px;
+    padding: 14px 10px;
+    font-size: 14px;
+    font-family: "Montserrat-Bold";
+
+    color: black;
+  }
+  .input input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #1b1b1b;
+    font-size: 14px;
+    font-family: "Monserrat-Regular";
+  }
+  .input input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #1b1b1b;
+    font-size: 14px;
+    font-family: "Monserrat-Regular";
+  }
+  .input input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #1b1b1b;
+    font-size: 14px;
+    font-family: "Monserrat-Regular";
+  }
+  .input input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #1b1b1b;
+    font-size: 14px;
+    font-family: "Monserrat-Regular";
+  }
+}
+
+@media (min-width: 700px) {
+  /* header */
+  header .sectionHeader {
+    height: 90px;
+    align-items: center;
+  }
+  header .logoHeader svg {
+    height: 76px;
+    width: 170.12px;
+  }
+  header .sectionMenu nav {
+    position: absolute;
+    top: 90px;
+  }
+  /* section footer */
+  footer .sectionFirst {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+  footer .sectionFirst .logs {
+    margin-top: 0;
+  }
+  footer .sectionSecound > div {
+    width: 90%;
+  }
+}
+@media (min-width: 1093px) {
+  .containers {
+    width: 1024px;
+  }
+  /* header nav  */
+  header {
+    height: 146px;
+    display: flex;
+    align-items: center;
+  }
+  header .sectionHeader {
+    justify-content: flex-start;
+  }
+  header .MenuIcons {
+    display: none;
+  }
+  header .sectionMenu {
+    margin-left: 41px;
+  }
+  header .sectionMenu nav {
+    position: unset;
+    background-color: transparent;
+    width: 794px;
+  }
+  header .sectionMenu nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .sectionMenu nav ul li {
+    padding: 0;
+  }
+  header .sectionMenu nav ul li {
+    position: relative;
+  }
+  header .sectionMenu nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 0;
+    transition: 0.2s all;
+    background-color: #58dd3a;
+    border-radius: 10px;
+  }
+  header .sectionMenu nav ul li.activeLink::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 0;
+    transition: 0.2s all;
+    background-color: #58dd3a;
+    border-radius: 10px;
+    width: 32px;
+  }
+
+  header .sectionMenu nav ul li:hover a {
+    color: white;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover {
+    background-color: transparent;
+  }
+
+  header .sectionMenu nav ul li:not(:last-child):hover:after {
+    width: 32px;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover {
+    border-radius: 5px;
+  }
+  header .sectionHeaderInfo .centerDiv {
+    width: 714px;
+    top: 212px;
+    transform: translate(-50%, 0%);
+  }
+  header .sectionHeaderInfo .minTitle h6 {
+    font-size: 21px;
+  }
+  header .sectionHeaderInfo .title h1 {
+    font-size: 60px;
+    line-height: 73px;
+  }
+  /* section dataSetBody */
+  #datasetsBody {
+    display: grid;
+    grid-template-columns: 0px 307px 1fr 76px;
+    grid-template-areas: ". filter body .";
+  }
+  #datasetsBody .column1 {
+    padding: 0;
+  }
+  #datasetsBody .column1 .menuLinksShow {
+    display: none;
+  }
+
+  #filter {
+    position: unset;
+    box-shadow: unset;
+    width: 100%;
+  }
+  .titleHeader {
+    height: 104px;
+    width: 307px;
+    padding: 0;
+    padding: 50px 210px 0px 30px;
+    margin-bottom: 12px;
+    background-color: #f9f9f9;
+  }
+  .titleHeader h3 {
+    margin: 0;
+    line-height: 24px;
+    font-size: 20px;
+    padding: 0;
+  }
+  .titleHeader h3:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+    width: 32px;
+    height: 5px;
+    background-color: #58dd3a;
+  }
+  /* section Filter Items */
+  #filter {
+    margin: auto;
+  }
+  #filter .filterItems {
+    margin: auto;
+    width: 279px;
+  }
+  #filter .filterItems .item {
+    padding: 0;
+  }
+  #filter .filterItems .item .titleFilter {
+    padding: 10px 20px 16px 16px;
+  }
+  #filter .filterItems .item .titleFilter h3 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  #filter .filterItems .item .filterOption {
+    margin: 0;
+    padding: 7px 20px 7px 16px;
+  }
+
+  #filter .filterItems .item .filterOption span {
+    font-size: 14px;
+  }
+
+  #filter .filterItems .item:nth-of-type(1) .filterOption img {
+    margin-right: 19px;
+  }
+  #filter .filterItems .item .filterOption h6 {
+    font-size: 14px;
+  }
+  #filter .filterItems .item:nth-of-type(2) .showMore {
+    color: #b6b6b6;
+    font-size: 14px;
+    padding: 7px 20px 7px 16px;
+  }
+  /* section dataset */
+  .input {
+    margin-bottom: 30px;
+  }
+  .input input {
+    border: 0;
+    width: 80%;
+    border-radius: 10px;
+    padding: 14px 14px;
+    font-size: 20px;
+    font-family: "Montserrat-Bold";
+
+    color: black;
+  }
+  .input img {
+    margin-right: 10px;
+  }
+  .input input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #1b1b1b;
+    font-size: 20px;
+    font-family: "Monserrat-Regular";
+  }
+  .input input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #1b1b1b;
+    font-size: 20px;
+    font-family: "Monserrat-Regular";
+  }
+  .input input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #1b1b1b;
+    font-size: 20px;
+    font-family: "Monserrat-Regular";
+  }
+  .input input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #1b1b1b;
+    font-size: 20px;
+    font-family: "Monserrat-Regular";
+  }
+  #dataset {
+    margin: 0;
+  }
+  #dataset .container {
+    width: 981px;
+    padding-left: 76px;
+  }
+  #dataset .headerTitle {
+    padding: 50px 210px 0px 0px;
+    margin-bottom: 25px;
+  }
+  #dataset .headerTitle img {
+    height: 19px;
+    width: 19px;
+  }
+  #dataset .headerTitle h5 {
+    font-size: 16px;
+  }
+  #dataset .dataFound {
+    margin-bottom: 25px;
+  }
+  #dataset .dataFound h4 {
+    font-size: 20px;
+    font-weight: 100;
+  }
+  #dataset .items .item {
+    height: 161px;
+    width: 100%;
+    margin-bottom: 14px;
+    border-radius: 10px;
+  }
+  #dataset .items .item h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 19px;
+    letter-spacing: 0;
+  }
+  #dataset .items .item p {
+    font-size: 14px;
+    margin-bottom: 33px;
+    line-height: 18px;
+  }
+  #dataset .items .item .info .button {
+    padding: 5px 14px 6px 6px;
+  }
+  #dataset .items .item .info .button img {
+    height: 15px;
+    width: 17px;
+  }
+  #dataset .items .item .info .button h6 {
+    font-size: 12px;
+  }
+  /* pagination  */
+  #dataset .pagination {
+    margin: 24px 0 64px 0;
+  }
+  #dataset .pagination ul .mobile {
+    display: block;
+  }
+  #dataset .pagination ul li a {
+    font-size: 12px;
+    padding: 15px 20px;
+  }
+  #dataset .pagination ul li a span {
+    margin-left: 6px;
+  }
+  #dataset .pagination ul li a span:nth-of-type(2) {
+    margin-left: 1px;
+    position: relative;
+    left: -5px;
+  }
+
+  /* footer Section */
+  footer {
+  }
+  footer .sectionFirst {
+    margin-top: 0;
+    align-items: flex-start;
+    width: 915px;
+    margin: auto;
+  }
+  footer .sectionFirst .logs {
+    margin-top: 55px;
+    display: flex;
+    align-items: flex-start;
+  }
+  footer .sectionFirst .logs img:nth-of-type(1) {
+    height: 93px;
+    width: 73.14px;
+    margin-right: 19.9px;
+  }
+  footer .sectionFirst .logs img:nth-of-type(2) {
+    height: 97px;
+    width: 145.32px;
+  }
+  footer .sectionFirst .links {
+    margin-top: 30px;
+  }
+  footer .sectionSecound {
+    margin-top: 27px;
+  }
+  footer .sectionSecound > div {
+    width: 915px;
+  }
+  footer .sectionSecound .log svg {
+    height: 37px;
+    width: 82.82px;
+  }
 }

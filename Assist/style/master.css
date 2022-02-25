@@ -135,6 +135,30 @@ header .sectionHeaderInfo .centerDiv {
   text-align: center;
   width: 80%;
 }
+header .sectionHeaderInfo .centerDiv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+header .sectionHeaderInfo .centerDiv .items {
+  display: flex;
+}
+header .sectionHeaderInfo .centerDiv .items .item {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+header .sectionHeaderInfo .centerDiv .items .item:not(:first-child) {
+  display: none;
+}
+
+/* header .sectionHeaderInfo .centerDiv .items .item:not(:last-child) {
+  display: none;
+} */
+
 header .sectionHeaderInfo .title h1 {
   color: #ffffff;
   font-family: "Montserrat-Bold";
@@ -144,6 +168,16 @@ header .sectionHeaderInfo .title h1 {
   text-align: center;
   margin-bottom: 18.5px;
   font-weight: 100;
+  position: relative;
+  animation: titleH1 0.4s;
+}
+@keyframes titleH1 {
+  0% {
+    right: 400px;
+  }
+  100% {
+    right: 0;
+  }
 }
 header .sectionHeaderInfo .minTitle h6 {
   opacity: 0.69;
@@ -153,6 +187,17 @@ header .sectionHeaderInfo .minTitle h6 {
   letter-spacing: 0;
   line-height: 12.5px;
   margin-bottom: 31px;
+  position: relative;
+  animation: title 0.4s;
+}
+
+@keyframes title {
+  0% {
+    left: 200px;
+  }
+  100% {
+    left: 0;
+  }
 }
 header .sectionHeaderInfo .dataStroy {
   height: 50px;
@@ -163,6 +208,16 @@ header .sectionHeaderInfo .dataStroy {
   align-items: center;
   justify-content: center;
   margin: auto;
+  position: relative;
+  animation: datastroy 0.4s;
+}
+@keyframes datastroy {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0px;
+  }
 }
 header .sectionHeaderInfo .dataStroy a {
   color: #ffffff;
@@ -172,6 +227,7 @@ header .sectionHeaderInfo .dataStroy a {
   line-height: 19px;
   font-weight: 100;
 }
+
 header .buttonDeplace {
   display: flex;
   height: 5px;
@@ -190,7 +246,9 @@ header .buttonDeplace span {
   background-color: #ffffff;
   display: block;
 }
-
+header .buttonDeplace span:first-child {
+  background-color: #58dd3a;
+}
 header .sectionHeaderInfo .buttonLeft span,
 header .sectionHeaderInfo .buttonRight span {
   border: 1px solid white;
@@ -511,7 +569,8 @@ header .sectionHeaderInfo .buttonRight:hover {
   display: flex;
   margin: auto;
   width: 80%;
-  overflow: hidden;
+  position: relative;
+  transition: 0.2s all;
 }
 #useCases .sliderUseCases .items .item {
   width: 100%;
@@ -818,7 +877,7 @@ footer .sectionSecound .log svg {
   header .sectionMenu nav ul li {
     padding: 0;
   }
-  header .sectionMenu nav ul li:last-child {
+  header .sectionMenu nav ul li {
     position: relative;
   }
   header .sectionMenu nav ul li:not(:last-child):hover {
@@ -826,6 +885,31 @@ footer .sectionSecound .log svg {
   }
   header .sectionMenu nav ul li:not(:last-child):hover {
     border-radius: 5px;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover a {
+    color: white;
+  }
+  header .sectionMenu nav ul li:not(:last-child) a {
+    position: relative;
+  }
+
+  header .sectionMenu nav ul li:not(:last-child) a {
+    position: relative;
+  }
+  header .sectionMenu nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 0;
+    transition: 0.2s all;
+    background-color: #58dd3a;
+    border-radius: 10px;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover:after {
+    width: 32px;
   }
   header .sectionHeaderInfo .centerDiv {
     width: 714px;
