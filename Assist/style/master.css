@@ -859,6 +859,7 @@ footer .sectionSecound .log svg {
   header {
     height: 665px;
     /* padding-top: 32px; */
+    overflow: hidden;
   }
   header .sectionHeader {
     justify-content: flex-start;
