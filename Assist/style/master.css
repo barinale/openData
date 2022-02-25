@@ -858,10 +858,11 @@ footer .sectionSecound .log svg {
   /* header nav  */
   header {
     height: 665px;
-    padding-top: 32px;
+    /* padding-top: 32px; */
   }
   header .sectionHeader {
     justify-content: flex-start;
+    height: 146px;
   }
   header .MenuIcons {
     display: none;
