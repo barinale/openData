@@ -46,7 +46,8 @@ header .logoHeader svg {
   width: 75.12px;
 }
 header .sectionHeader {
-  height: 60px;
+  height: auto;
+  padding: 1em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

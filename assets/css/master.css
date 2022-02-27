@@ -20,12 +20,13 @@ body,
 }
 @font-face {
   font-family: "Monserrat-Regular";
-  src: url("../font/Montserrat-Regular.ttf");
+  src: url("../fonts/Montserrat-Regular.ttf");
 }
 @font-face {
   font-family: "Montserrat-Bold";
-  src: url("../font/Montserrat-Bold.ttf");
+  src: url("../fonts/Montserrat-Bold.ttf");
 }
+
 .container {
   width: 90%;
   margin: auto;
@@ -35,49 +36,45 @@ body {
 }
 header {
   width: 100%;
-  height: 600px;
+  min-height: 600px;
   position: relative;
-}
-header:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -39px;
-  right: 0;
-  top: -25px;
-  background-image: url("../img/Bitmap.png");
+  background-image: url("../images/Bitmap.png");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 80%;
-  transform: scale(1);
-  z-index: -1;
 }
 header .logoHeader svg {
   height: 38px;
   width: 75.12px;
 }
 header .sectionHeader {
-  height: 60px;
+  height: auto;
+  padding: 1em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 header .sectionMenu input[id="MenuIcons"]:checked + nav {
-  left: 0;
+  right: 0;
 }
 header .sectionMenu nav {
   position: absolute;
   top: 60px;
-  left: -100%;
+  right: -100%;
   width: 100%;
   transition: 0.2s all;
-  background-color: rgba(216, 216, 216, 0.7);
+  /* background-color: rgba(216, 216, 216, 0.2); */
+  background-color: rgba(27, 27, 27, 1);
   z-index: 10;
 }
 header .sectionMenu nav ul li {
-  padding: 16px 14px;
+  /* padding: 16px 14px; */
   transition: 0.2s all;
 }
+header .sectionMenu nav ul li:last-child {
+  padding: 16px 14px;
+}
+
 header .sectionMenu nav ul li:not(:last-child):hover {
   background-color: rgba(216, 216, 216, 1);
 }
@@ -88,6 +85,9 @@ header .sectionMenu nav ul li a {
   line-height: 18px;
   font-size: 14px;
   font-weight: lighter;
+  width: 100%;
+  display: block;
+  padding: 16px 14px;
 }
 header .sectionMenu nav ul li:hover a {
   color: black;
@@ -187,6 +187,7 @@ header .sectionHeaderInfo .minTitle h6 {
   opacity: 0.69;
   color: #ffffff;
   font-family: "Monserrat-Regular";
+  font-weight: normal;
   font-size: 10.5px;
   letter-spacing: 0;
   line-height: 12.5px;
@@ -204,14 +205,9 @@ header .sectionHeaderInfo .minTitle h6 {
   }
 }
 header .sectionHeaderInfo .dataStroy {
-  height: 50px;
-  width: 159px;
-  border-radius: 25px;
-  background-color: #58dd3a;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   position: relative;
   animation: datastroy 0.4s;
 }
@@ -224,14 +220,21 @@ header .sectionHeaderInfo .dataStroy {
   }
 }
 header .sectionHeaderInfo .dataStroy a {
+  padding: 16px 34px;
+  border-radius: 30px;
+  background-color: #58dd3a;
   color: #ffffff;
   font-family: "Montserrat-Bold";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 19px;
-  font-weight: 100;
+  font-weight: normal;
+  transition: 0.2s all;
 }
-
+header .sectionHeaderInfo .dataStroy a:hover {
+  color: #58dd3a;
+  background-color: white;
+}
 header .buttonDeplace {
   display: flex;
   height: 5px;
@@ -353,9 +356,15 @@ header .sectionHeaderInfo .buttonRight:hover {
 #searchInput svg {
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
+#searchInput svg:hover .s0 {
+  fill: #58dd3a;
+}
+
 #searchInput svg .s0 {
   fill: black;
+  transition: 0.2s all;
 }
 
 #searchInput input::-webkit-input-placeholder {
@@ -442,6 +451,7 @@ header .sectionHeaderInfo .buttonRight:hover {
   height: 49px;
   width: 58px;
 }
+
 #topics .item:first-child .info svg .s0 {
   fill: #aedd3a;
 }
@@ -576,7 +586,9 @@ header .sectionHeaderInfo .buttonRight:hover {
   width: 80%;
   position: relative;
   transition: 0.2s all;
+  overflow: hidden;
 }
+
 #useCases .sliderUseCases .items .item {
   width: 100%;
   flex-basis: 1;
