@@ -11,30 +11,139 @@
   font-family: "Montserrat-Bold";
   src: url("../fonts/Montserrat-Bold.ttf");
 }
+html,
+body {
+  overflow-x: hidden;
+}
 
 ul {
   list-style: none;
 }
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .container {
   width: 90%;
   margin: auto;
 }
-
+input[type="checkbox"] {
+  display: none;
+}
 body {
   background-color: #efefef;
 }
+/* section header */
+header {
+  width: 100%;
+  position: relative;
+  background-color: #1b1b1b;
+}
+header .logoHeader svg {
+  height: auto;
+  width: 75.12px;
+}
+header .sectionHeader {
+  height: auto;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .sectionMenu input[id="MenuIcons"]:checked + nav {
+  right: 0;
+}
+header .sectionMenu nav {
+  position: absolute;
+  top: 60px;
+  right: -100%;
+  width: 100%;
+  transition: 0.2s all;
+  /* background-color: rgba(216, 216, 216, 0.2); */
+  background-color: rgba(27, 27, 27, 1);
+  z-index: 10;
+}
+header .sectionMenu nav ul li {
+  /* padding: 16px 14px; */
+  transition: 0.2s all;
+}
+header .sectionMenu nav ul li:last-child {
+  padding: 16px 14px;
+}
+
+header .sectionMenu nav ul li:not(:last-child):hover {
+  background-color: rgba(216, 216, 216, 1);
+}
+
+header .sectionMenu nav ul li a {
+  font-family: "Montserrat-Bold";
+  letter-spacing: 0;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: lighter;
+  width: 100%;
+  display: block;
+  padding: 16px 14px;
+}
+header .sectionMenu nav ul li:hover a {
+  color: black;
+}
+header .sectionMenu nav ul li:last-child {
+  color: white;
+  font-family: "Montserrat-Bold";
+  letter-spacing: 0;
+  line-height: 18px;
+  font-size: 14px;
+}
+header .sectionMenu nav ul li:last-child > span {
+  position: relative;
+  height: 29px;
+  width: 84px;
+  border-radius: 4px;
+  background-color: rgba(216, 216, 216, 0.2);
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+  cursor: pointer;
+}
+header .sectionMenu nav ul li:last-child > span > span {
+  height: 7px;
+  width: 7px;
+  display: block;
+  border-radius: 2px;
+  border: 2px solid #ffffff;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(45deg);
+  margin-left: 10.8px;
+}
+
+header .MenuIcons span {
+  width: 30px;
+  height: 6px;
+  border-radius: 10px;
+  background-color: rgba(216, 216, 216, 0.5);
+  display: block;
+  margin: 5px 0;
+}
 
 /* section publishers */
+#publishers .titleheader {
+  margin: 20px 0 30px 0;
+  display:flex;
+  align-items:center;
+}
 #publishers .titleheader h3 {
   font-family: "Montserrat-Bold";
   color: #b6b6b6;
   font-weight: normal;
   font-size: 14px;
 }
+#publishers .titleheader svg{
+  width:15px;
+  margin-right:4px;
+}
+
 #publishers .items {
   display: flex;
   flex-wrap: wrap;
@@ -48,14 +157,25 @@ body {
   align-items: center;
   justify-content: flex-end;
   text-align: center;
+  flex-grow: 0;
+  flex-shrink: 1;
   margin-bottom: 16px;
+  border-radius: 5px;
+    border: 0px solid ;
+    transition:.2s all;
 }
+#publishers .items .item:hover{
+      box-shadow:1px 1px 6px rgba(88,221,58,0.25);
+
+}
+
 #publishers .items .item .img {
   height: auto;
   width: auto;
-  max-width: 80%;
+  max-width: 100%;
   margin: auto;
   flex-grow: 1;
+  flex-basis: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,13 +183,15 @@ body {
 #publishers .items .item .img img {
   width: auto;
   height: auto;
+  max-height: 100%;
   max-width: 100%;
 }
 #publishers .items .item h4 {
   font-family: "Montserrat-Bold";
-  font-weight: 100;
+  font-weight: normal;
   font-size: 10px;
   margin-bottom: 8px;
+  color: #1b1b1b;
 }
 #publishers .items .item p {
   font-size: 9px;
@@ -78,4 +200,314 @@ body {
   background-color: #f4f4f4;
   padding: 2px 2px;
   margin-bottom: 4px;
+  color: #909090;
+  border-radius: 2px;
+}
+#publishers .pagination {
+  margin: 30px auto;
+}
+#publishers .pagination ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#publishers .pagination ul li {
+  margin-right: 10px;
+}
+#publishers .pagination ul .mobile {
+  display: none;
+}
+
+#publishers .pagination ul li a {
+  font-size: 10px;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  padding: 10px;
+  background-color: white;
+  color: #1b1b1b;
+  border-radius: 5px;
+  transition: 0.2s all;
+}
+#publishers .pagination ul li a.active {
+  background-color: #58dd3a;
+  color: white;
+}
+#publishers .pagination ul li a {
+  display: flex;
+  align-self: baseline;
+}
+#publishers .pagination ul li a span {
+  height: 10px;
+  width: 10px;
+  border: 2px solid #d9d9d9;
+  border-left: 0;
+  border-bottom: 0;
+  transform: rotate(45deg) translateY(3px);
+  display: block;
+  margin-left: 3px;
+  transition: 0.2s all;
+}
+
+#publishers .pagination ul li a:hover {
+  background-color: #58dd3a;
+  color: white;
+}
+#publishers .pagination ul li a:hover span {
+  border-color: white;
+}
+
+/* section footer */
+footer {
+  border-top: 4px solid #58de3a;
+  background-color: #1b1b1b;
+}
+footer .sectionFirst {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+}
+footer .sectionFirst ul li a {
+  color: #ffffff;
+  font-family: "Monserrat-Regular";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 25px;
+  transition: 0.2s all;
+}
+footer .sectionFirst ul li a:hover {
+  color: #58dd3a;
+}
+
+footer .sectionFirst .logs {
+  margin-top: 20px;
+}
+footer .sectionFirst .logs img {
+  width: 100px;
+  height: 100px;
+}
+footer .sectionSecound {
+  background-color: #141414;
+  margin-top: 10px;
+}
+footer .sectionSecound > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px 0;
+}
+
+footer .sectionSecound .copyright p {
+  color: #ffffff;
+  font-family: "Monserrat-Regular";
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+footer .sectionSecound .log svg {
+  width: 60px;
+  height: 20px;
+}
+
+@media (min-width: 768px) {
+  /* header */
+  header .sectionHeader {
+    height: 90px;
+    align-items: center;
+  }
+  header .logoHeader svg {
+    height: auto;
+    width: 170.12px;
+  }
+  header .sectionMenu nav {
+    position: absolute;
+    top: 90px;
+  }
+  /* section publishers */
+  #publishers .items {
+    justify-content: flex-start;
+  }
+
+  #publishers .items .item {
+    width: 236px;
+    height: auto;
+    min-height: 204px;
+    border-radius: 10px;
+    margin-right: 16px;
+  }
+  #publishers .items .item .img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  #publishers .items .item h4 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 8px;
+    width: auto;
+    max-width: 70%;
+  }
+  #publishers .items .item p {
+    font-size: 12px;
+    line-height: 15px;
+    padding: 3px 8px;
+    border-radius: 11px;
+    margin-bottom: 11px;
+  }
+  /* section footer */
+  footer .sectionFirst {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+  footer .sectionFirst .logs {
+    margin-top: 0;
+  }
+  footer .sectionSecound > div {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 1024px;
+  }
+  /* header nav  */
+  header {
+    height: 146px;
+    display: flex;
+    align-items: center;
+  }
+  header .sectionHeader {
+    justify-content: flex-start;
+    height: auto;
+    padding: 33px 0;
+  }
+  header .MenuIcons {
+    display: none;
+  }
+  header .sectionMenu {
+    margin-left: 41px;
+  }
+  header .sectionMenu nav {
+    position: unset;
+    background-color: transparent;
+    width: 794px;
+  }
+  header .sectionMenu nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .sectionMenu nav ul li {
+    padding: 0;
+  }
+  header .sectionMenu nav ul li {
+    position: relative;
+  }
+  header .sectionMenu nav ul li a {
+    padding: 0px;
+  }
+
+  header .sectionMenu nav ul li:not(:last-child):hover {
+    background-color: transparent;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover {
+    border-radius: 5px;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover a {
+    color: white;
+  }
+  header .sectionMenu nav ul li:not(:last-child) a {
+    position: relative;
+  }
+
+  header .sectionMenu nav ul li:not(:last-child) a {
+    position: relative;
+  }
+  header .sectionMenu nav ul li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    height: 5px;
+    width: 0;
+    transition: 0.2s all;
+    background-color: #58dd3a;
+    border-radius: 10px;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover:after {
+    width: 32px;
+  }
+  /* section publishers */
+#publishers .titleheader {
+  margin: 52px 0 48px 0;
+}
+#publishers .titleheader h3 {
+  font-size:16px;
+  line-height:19px;
+}
+#publishers .titleheader svg{
+  width:19px;
+  margin-right:10px;
+}
+  /* pagination  */
+  #publishers .pagination {
+    margin: 26px 0 82px 0;
+  }
+  #publishers .pagination ul .mobile {
+    display: block;
+  }
+  #publishers .pagination ul li a {
+    font-size: 12px;
+    padding: 15px 20px;
+  }
+  #publishers .pagination ul li a span {
+    margin-left: 6px;
+  }
+  #publishers .pagination ul li a span:nth-of-type(2) {
+    margin-left: 1px;
+    position: relative;
+    left: -5px;
+  }
+  /* footer Section */
+  footer {
+  }
+  footer .sectionFirst {
+    margin-top: 0;
+    align-items: flex-start;
+    width: 915px;
+    margin: auto;
+  }
+  footer .sectionFirst .logs {
+    margin-top: 55px;
+    display: flex;
+    align-items: flex-start;
+  }
+  footer .sectionFirst .logs img:nth-of-type(1) {
+    height: 93px;
+    width: 73.14px;
+    margin-right: 19.9px;
+  }
+  footer .sectionFirst .logs img:nth-of-type(2) {
+    height: 97px;
+    width: 145.32px;
+  }
+  footer .sectionFirst .links {
+    margin-top: 30px;
+  }
+  footer .sectionSecound {
+    margin-top: 27px;
+  }
+  footer .sectionSecound > div {
+    width: 915px;
+  }
+  footer .sectionSecound .log svg {
+    height: 37px;
+    width: 82.82px;
+  }
 }

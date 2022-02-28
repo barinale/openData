@@ -42,9 +42,10 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
 }
 header .logoHeader svg {
-  height: 38px;
+  height: auto;
   width: 75.12px;
 }
 header .sectionHeader {
@@ -399,7 +400,7 @@ header .sectionHeaderInfo .buttonRight:hover {
   letter-spacing: 0;
   line-height: 25px;
   position: relative;
-  font-weight: 100;
+  font-weight: normal;
 }
 
 .titleHeader h3:after {
@@ -418,22 +419,23 @@ header .sectionHeaderInfo .buttonRight:hover {
 #topics .items {
   margin-top: 52px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
 }
 #topics .item {
-  height: 164px;
-  width: 164px;
+  min-height: 124px;
+  width: 124px;
   border-radius: 10px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
   text-align: center;
   position: relative;
-  margin-bottom: 24px;
-  margin-right: 24px;
-  padding-top: 43px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding-top: 23px;
+  transition: 0.2s all;
 }
 #topics .item:after {
   content: "";
@@ -443,13 +445,27 @@ header .sectionHeaderInfo .buttonRight:hover {
   transform: translateX(-50%);
   height: 4px;
   width: 68px;
+  transition: 0.2s all;
+}
+#topics .item .info svg .s0 {
+  transition: 0.2s all;
 }
 #topics .item:first-child:after {
   background-color: #aedd3a;
 }
+#topics .item:first-child:hover:after {
+  background-color: white;
+}
+#topics .item:first-child:hover {
+  background-color: #aedd3a;
+}
+
 #topics .item:first-child .info svg {
   height: 49px;
   width: 58px;
+}
+#topics .item:first-child:hover .info svg .s0 {
+  fill: white;
 }
 
 #topics .item:first-child .info svg .s0 {
@@ -466,12 +482,38 @@ header .sectionHeaderInfo .buttonRight:hover {
   height: 49px;
   width: 56px;
 }
+#topics .item:nth-of-type(2):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(2):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(2):after {
+  background-color: #58dd3a;
+}
+#topics .item:nth-of-type(2) .info svg .s0 {
+  fill: #58dd3a;
+}
+#topics .item:nth-of-type(2):hover {
+  background-color: #58dd3a;
+}
+
 #topics .item:nth-of-type(3):after {
   background-color: #3addd8;
 }
 
 #topics .item:nth-of-type(3) .info svg .s0 {
   fill: #3addd8;
+}
+#topics .item:nth-of-type(3):hover:after {
+  background-color: white;
+}
+
+#topics .item:nth-of-type(3):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(3):hover {
+  background-color: #3addd8;
 }
 #topics .item:nth-of-type(3) .info svg {
   height: 49px;
@@ -487,6 +529,15 @@ header .sectionHeaderInfo .buttonRight:hover {
   height: 47px;
   width: 52px;
 }
+#topics .item:nth-of-type(4):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(4):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(4):hover {
+  background-color: #dd3a5c;
+}
 #topics .item:nth-of-type(5):after {
   background-color: #623add;
 }
@@ -496,6 +547,15 @@ header .sectionHeaderInfo .buttonRight:hover {
 #topics .item:nth-of-type(5) .info svg {
   height: 49px;
   width: 57.76px;
+}
+#topics .item:nth-of-type(5):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(5):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(5):hover {
+  background-color: #623add;
 }
 #topics .item:nth-of-type(6):after {
   background-color: #e45fc7;
@@ -507,6 +567,15 @@ header .sectionHeaderInfo .buttonRight:hover {
   height: 44px;
   width: 57px;
 }
+#topics .item:nth-of-type(6):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(6):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(6):hover {
+  background-color: #e45fc7;
+}
 #topics .item:nth-of-type(7):after {
   background-color: #3a87dd;
 }
@@ -516,6 +585,15 @@ header .sectionHeaderInfo .buttonRight:hover {
 #topics .item:nth-of-type(7) .info svg {
   height: 49px;
   width: 49px;
+}
+#topics .item:nth-of-type(7):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(7):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(7):hover {
+  background-color: #3a87dd;
 }
 #topics .item:nth-of-type(8):after {
   background-color: #ff7433;
@@ -527,6 +605,15 @@ header .sectionHeaderInfo .buttonRight:hover {
   height: 49px;
   width: 49px;
 }
+#topics .item:nth-of-type(8):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(8):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(8):hover {
+  background-color: #ff7433;
+}
 #topics .item:nth-of-type(9):after {
   background-color: #ffb712;
 }
@@ -537,6 +624,15 @@ header .sectionHeaderInfo .buttonRight:hover {
   height: 49px;
   width: 49px;
 }
+#topics .item:nth-of-type(9):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(9):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(9):hover {
+  background: #ffb712;
+}
 #topics .item:nth-of-type(10):after {
   background-color: #cbcbcb;
 }
@@ -546,6 +642,15 @@ header .sectionHeaderInfo .buttonRight:hover {
 #topics .item:nth-of-type(10) .info svg {
   height: 49.3px;
   width: 49px;
+}
+#topics .item:nth-of-type(10):hover:after {
+  background-color: white;
+}
+#topics .item:nth-of-type(10):hover .info svg .s0 {
+  fill: white;
+}
+#topics .item:nth-of-type(10):hover {
+  background-color: #cbcbcb;
 }
 #topics .item .info {
 }
@@ -651,6 +756,15 @@ header .sectionHeaderInfo .buttonRight:hover {
 #datasets .item {
   margin-top: 26px;
   background: linear-gradient(180deg, #fcfcfc 0%, #f8f8f8 100%);
+  display: block;
+  transition: 0.2s all;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+  z-index: 10;
+}
+#datasets .item:hover {
+  transform: scale(1.1);
 }
 #datasets .item .info {
   padding: 23px 0 23px 28px;
@@ -691,27 +805,58 @@ header .sectionHeaderInfo .buttonRight:hover {
 #datasets .newAndRecent .item:nth-of-type(1) .info a {
   background-color: #58dd3a;
 }
+#datasets .newAndRecent .item:nth-of-type(1):hover {
+  box-shadow: 0px 0px 3px #58dd3a;
+}
+
 #datasets .newAndRecent .item:nth-of-type(2) .info a {
   background-color: #e45fc7;
 }
+#datasets .newAndRecent .item:nth-of-type(2):hover {
+  box-shadow: 0px 0px 3px #e45fc7;
+}
+
 #datasets .newAndRecent .item:nth-of-type(3) .info a {
   background-color: #3addd8;
 }
+#datasets .newAndRecent .item:nth-of-type(3):hover {
+  box-shadow: 0px 0px 3px #3addd8;
+}
+
 #datasets .newAndRecent .item:nth-of-type(4) .info a {
   background-color: #ff7433;
 }
+#datasets .newAndRecent .item:nth-of-type(4):hover {
+  box-shadow: 0px 0px 3px #ff7433;
+}
+
 #datasets .featureDatasets .item:nth-of-type(1) .info a {
   background-color: #cbcbcb;
+}
+#datasets .featureDatasets .item:nth-of-type(1):hover {
+  box-shadow: 0px 0px 3px #cbcbcb;
 }
 #datasets .featureDatasets .item:nth-of-type(2) .info a {
   background-color: #ffb712;
 }
+#datasets .featureDatasets .item:nth-of-type(2):hover {
+  box-shadow: 0px 0px 3px #ffb712;
+}
+
 #datasets .featureDatasets .item:nth-of-type(3) .info a {
   background-color: #aedd3a;
 }
+#datasets .featureDatasets .item:nth-of-type(3):hover {
+  box-shadow: 0px 0px 3px #aedd3a;
+}
+
 #datasets .featureDatasets .item:nth-of-type(4) .info a {
   background-color: #3a87dd;
 }
+#datasets .featureDatasets .item:nth-of-type(4):hover {
+  box-shadow: 0px 0px 3px #3a87dd;
+}
+
 /* section footer */
 footer {
   border-top: 4px solid #58de3a;
@@ -731,7 +876,12 @@ footer .sectionFirst ul li a {
   font-size: 14px;
   letter-spacing: 0;
   line-height: 25px;
+  transition: 0.2s all;
 }
+footer .sectionFirst ul li a:hover {
+  color: #58dd3a;
+}
+
 footer .sectionFirst .logs {
   margin-top: 20px;
 }
@@ -763,7 +913,7 @@ footer .sectionSecound .log svg {
   height: 20px;
 }
 
-@media (min-width: 425px) {
+@media (min-width: 768px) {
   /* search input */
 
   #searchInput input::-webkit-input-placeholder {
@@ -790,6 +940,20 @@ footer .sectionSecound .log svg {
     font-size: 14px;
     font-family: "Monserrat-Regular";
   }
+  /* header */
+  header .sectionHeader {
+    height: 90px;
+    align-items: center;
+  }
+  header .logoHeader svg {
+    height: auto;
+    width: 170.12px;
+  }
+  header .sectionMenu nav {
+    position: absolute;
+    top: 90px;
+  }
+
   /* section Topics */
 
   #topics .items {
@@ -799,6 +963,7 @@ footer .sectionSecound .log svg {
   #topics .items .item {
     margin: 1em;
   }
+  /* section Use Case */
   /* section Use Cases */
   #useCases .arrowLeft {
     left: 10%;
@@ -823,23 +988,6 @@ footer .sectionSecound .log svg {
     margin-left: 28px;
     margin-bottom: 27px;
   }
-}
-
-@media (min-width: 700px) {
-  /* header */
-  header .sectionHeader {
-    height: 90px;
-    align-items: center;
-  }
-  header .logoHeader svg {
-    height: 76px;
-    width: 170.12px;
-  }
-  header .sectionMenu nav {
-    position: absolute;
-    top: 90px;
-  }
-  /* section Use Case */
   #useCases .arrowLeft {
     left: 5px;
   }
@@ -863,19 +1011,22 @@ footer .sectionSecound .log svg {
     width: 90%;
   }
 }
-@media (min-width: 1093px) {
+@media (min-width: 1024px) {
   .container {
     width: 1024px;
   }
   /* header nav  */
   header {
-    height: 665px;
-    /* padding-top: 32px; */
+    min-height: 665px;
     overflow: hidden;
+    background-position: -600px;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   header .sectionHeader {
     justify-content: flex-start;
-    height: 146px;
+    height: auto;
+    padding: 33px 0;
   }
   header .MenuIcons {
     display: none;
@@ -899,6 +1050,10 @@ footer .sectionSecound .log svg {
   header .sectionMenu nav ul li {
     position: relative;
   }
+  header .sectionMenu nav ul li a {
+    padding: 0px;
+  }
+
   header .sectionMenu nav ul li:not(:last-child):hover {
     background-color: transparent;
   }
@@ -949,6 +1104,9 @@ footer .sectionSecound .log svg {
     margin: auto;
   }
   /* search Bar */
+  #searchInput {
+    top: -41px;
+  }
   #searchInput input {
     padding: 28px 0 27px 36px;
     font-size: 20px;
@@ -998,6 +1156,9 @@ footer .sectionSecound .log svg {
     margin: 0;
     margin-right: 24px;
     margin-bottom: 24px;
+    min-height: 164px;
+    width: 164px;
+    padding-top: 43px;
   }
   /* section use Cases */
   #useCases .arrowLeft {
@@ -1055,6 +1216,7 @@ footer .sectionSecound .log svg {
   #datasets .item .info {
     padding: 23px 71px 23px 28px;
   }
+
   #datasets .item .info .category {
     margin-top: 18px;
   }

@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Monserrat-Regular";
-  src: url("../font/Montserrat-Regular.ttf");
+  src: url("../fonts/Montserrat-Regular.ttf");
   font-weight: 100;
 }
 @font-face {
   font-family: "Montserrat-Bold";
-  src: url("../font/Montserrat-Bold.ttf");
+  src: url("../fonts/Montserrat-Bold.ttf");
   font-family: 100;
 }
 
@@ -14,7 +14,10 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+html,
+body {
+  overflow-x: hidden;
+}
 input[type="checkbox"] {
   display: none;
 }
@@ -30,19 +33,17 @@ body {
 }
 /* section header */
 
+a {
+  text-decoration: none;
+  color: white;
+}
 header {
   width: 100%;
   position: relative;
   background-color: #1b1b1b;
 }
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
 header .logoHeader svg {
-  height: 38px;
+  height: auto;
   width: 75.12px;
 }
 header .sectionHeader {
@@ -53,21 +54,26 @@ header .sectionHeader {
   align-items: center;
 }
 header .sectionMenu input[id="MenuIcons"]:checked + nav {
-  left: 0;
+  right: 0;
 }
 header .sectionMenu nav {
   position: absolute;
   top: 60px;
-  left: -100%;
+  right: -100%;
   width: 100%;
   transition: 0.2s all;
-  background-color: rgba(216, 216, 216, 0.7);
+  /* background-color: rgba(216, 216, 216, 0.2); */
+  background-color: rgba(27, 27, 27, 1);
   z-index: 10;
 }
 header .sectionMenu nav ul li {
-  padding: 16px 14px;
+  /* padding: 16px 14px; */
   transition: 0.2s all;
 }
+header .sectionMenu nav ul li:last-child {
+  padding: 16px 14px;
+}
+
 header .sectionMenu nav ul li:not(:last-child):hover {
   background-color: rgba(216, 216, 216, 1);
 }
@@ -78,6 +84,9 @@ header .sectionMenu nav ul li a {
   line-height: 18px;
   font-size: 14px;
   font-weight: lighter;
+  width: 100%;
+  display: block;
+  padding: 16px 14px;
 }
 header .sectionMenu nav ul li:hover a {
   color: black;
@@ -203,7 +212,7 @@ input[id="menuFilter"]:checked + .column1 #filter {
   color: #1b1b1b;
   font-size: 14px;
   font-family: "Montserrat-Bold";
-  font-weight: 100;
+  font-weight: normal;
 }
 #filter .filterItems .item .titleFilter span {
   height: 10px;
@@ -224,6 +233,11 @@ input[id="menuFilter"]:checked + .column1 #filter {
   align-items: center;
   margin: 10px 0;
   padding: 0 15px 0 0;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+#filter .filterItems .item .filterOption:hover {
+  background-color: #f9f9f9;
 }
 #filter .filterItems .item:nth-of-type(1) .filterOption svg {
   height: 16px;
@@ -408,9 +422,14 @@ input[id="menuFilter"]:checked + .column1 #filter {
 .input svg {
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
 .input svg .s0 {
   fill: black;
+  transition: 0.2s all;
+}
+.input svg:hover .s0 {
+  fill: #58dd3a;
 }
 
 #dataset .headerTitle {
@@ -442,7 +461,13 @@ input[id="menuFilter"]:checked + .column1 #filter {
   background-color: white;
   margin-bottom: 10px;
   border-radius: 10px;
+  position: relative;
+  transition: 0.2s all;
 }
+#dataset .items .item:hover {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
 #dataset .items .item h4 {
   padding: 26px 0px 0px 28px;
   font-family: "Montserrat-Bold";
@@ -609,7 +634,12 @@ footer .sectionFirst ul li a {
   font-size: 14px;
   letter-spacing: 0;
   line-height: 25px;
+  transition: 0.2s all;
 }
+footer .sectionFirst ul li a:hover {
+  color: #58dd3a;
+}
+
 footer .sectionFirst .logs {
   margin-top: 20px;
 }
@@ -641,7 +671,21 @@ footer .sectionSecound .log svg {
   height: 20px;
 }
 
-@media (min-width: 425px) {
+@media (min-width: 768px) {
+  /* header */
+  header .sectionHeader {
+    height: 90px;
+    align-items: center;
+  }
+  header .logoHeader svg {
+    height: auto;
+    width: 170.12px;
+  }
+  header .sectionMenu nav {
+    position: absolute;
+    top: 90px;
+  }
+
   /* search input */
   input {
     border: 0;
@@ -677,22 +721,7 @@ footer .sectionSecound .log svg {
     font-size: 14px;
     font-family: "Monserrat-Regular";
   }
-}
 
-@media (min-width: 700px) {
-  /* header */
-  header .sectionHeader {
-    height: 90px;
-    align-items: center;
-  }
-  header .logoHeader svg {
-    height: 76px;
-    width: 170.12px;
-  }
-  header .sectionMenu nav {
-    position: absolute;
-    top: 90px;
-  }
   /* section footer */
   footer .sectionFirst {
     flex-direction: row;
@@ -707,7 +736,8 @@ footer .sectionSecound .log svg {
     width: 90%;
   }
 }
-@media (min-width: 1093px) {
+
+@media (min-width: 1024px) {
   .containers {
     width: 1024px;
   }
@@ -719,6 +749,8 @@ footer .sectionSecound .log svg {
   }
   header .sectionHeader {
     justify-content: flex-start;
+    height: auto;
+    padding: 33px 0;
   }
   header .MenuIcons {
     display: none;
@@ -742,6 +774,26 @@ footer .sectionSecound .log svg {
   header .sectionMenu nav ul li {
     position: relative;
   }
+  header .sectionMenu nav ul li a {
+    padding: 0px;
+  }
+
+  header .sectionMenu nav ul li:not(:last-child):hover {
+    background-color: transparent;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover {
+    border-radius: 5px;
+  }
+  header .sectionMenu nav ul li:not(:last-child):hover a {
+    color: white;
+  }
+  header .sectionMenu nav ul li:not(:last-child) a {
+    position: relative;
+  }
+
+  header .sectionMenu nav ul li:not(:last-child) a {
+    position: relative;
+  }
   header .sectionMenu nav ul li:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -754,49 +806,14 @@ footer .sectionSecound .log svg {
     background-color: #58dd3a;
     border-radius: 10px;
   }
-  header .sectionMenu nav ul li.activeLink::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    transform: translateX(-50%);
-    height: 5px;
-    width: 0;
-    transition: 0.2s all;
-    background-color: #58dd3a;
-    border-radius: 10px;
-    width: 32px;
-  }
-
-  header .sectionMenu nav ul li:hover a {
-    color: white;
-  }
-  header .sectionMenu nav ul li:not(:last-child):hover {
-    background-color: transparent;
-  }
-
   header .sectionMenu nav ul li:not(:last-child):hover:after {
     width: 32px;
   }
-  header .sectionMenu nav ul li:not(:last-child):hover {
-    border-radius: 5px;
-  }
-  header .sectionHeaderInfo .centerDiv {
-    width: 714px;
-    top: 212px;
-    transform: translate(-50%, 0%);
-  }
-  header .sectionHeaderInfo .minTitle h6 {
-    font-size: 21px;
-  }
-  header .sectionHeaderInfo .title h1 {
-    font-size: 60px;
-    line-height: 73px;
-  }
+
   /* section dataSetBody */
   #datasetsBody {
     display: grid;
-    grid-template-columns: 0px 307px 1fr 76px;
+    grid-template-columns: 0px 307px 1fr  76px;
     grid-template-areas: ". filter body .";
   }
   #datasetsBody .column1 {
@@ -921,7 +938,7 @@ footer .sectionSecound .log svg {
   }
 
   #dataset {
-    margin: 0;
+    margin: 0 ;
   }
   #dataset .container {
     width: 981px;
@@ -950,6 +967,10 @@ footer .sectionSecound .log svg {
     width: 100%;
     margin-bottom: 14px;
     border-radius: 10px;
+  }
+  #dataset .items .item:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
   #dataset .items .item h4 {
     font-size: 16px;
