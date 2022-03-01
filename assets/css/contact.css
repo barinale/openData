@@ -126,134 +126,95 @@ header .MenuIcons span {
   display: block;
   margin: 5px 0;
 }
-
-/* section publishers */
-#publishers .titleheader {
-  margin: 20px 0 30px 0;
+/* section Contact */
+#contact {
+  margin: 24px auto;
+}
+#contact .headerTitle {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
-#publishers .titleheader h3 {
+#contact .headerTitle svg {
+  width: 16px;
+  margin-right: 5px;
+}
+#contact .headerTitle h3 {
   font-family: "Montserrat-Bold";
-  color: #b6b6b6;
   font-weight: normal;
+  color: #b6b6b6;
   font-size: 14px;
+  line-height: 19px;
 }
-#publishers .titleheader svg {
-  width: 15px;
-  margin-right: 4px;
-}
-
-#publishers .items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-#publishers .items .item {
-  width: 140px;
+#contact .form {
   background-color: white;
+  border-radius: 10px;
+  padding: 23px 14px;
+}
+#contact .form form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: center;
-  flex-grow: 0;
+}
+#contact .form form .input-controll {
+  width: 100%;
   margin-bottom: 16px;
-  border-radius: 5px;
-  border: 0px solid;
-  transition: 0.2s all;
 }
-#publishers .items .item:hover {
-  transform: scale(1.1);
-  outline: 3px solid rgba(88, 221, 58, 0.5);
-}
-
-#publishers .items .item .img {
-  height: auto;
-  width: auto;
-  max-width: 100%;
-  margin: auto;
-  flex-grow: 1;
-  flex-basis: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#publishers .items .item .img img {
-  width: auto;
-  height: auto;
-  max-height: 100%;
-  max-width: 100%;
-}
-#publishers .items .item h4 {
-  font-family: "Montserrat-Bold";
-  font-weight: normal;
-  font-size: 10px;
-  margin-bottom: 8px;
-  color: #1b1b1b;
-}
-#publishers .items .item p {
-  font-size: 9px;
-  font-weight: 100;
-  font-family: "Monserrat-Regular";
-  background-color: #f4f4f4;
-  padding: 2px 2px;
-  margin-bottom: 4px;
-  color: #909090;
-  border-radius: 2px;
-}
-#publishers .pagination {
-  margin: 30px auto;
-}
-#publishers .pagination ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#publishers .pagination ul li {
-  margin-right: 10px;
-}
-#publishers .pagination ul .mobile {
-  display: none;
-}
-
-#publishers .pagination ul li a {
-  font-size: 10px;
+#contact .form form .input-controll label {
+  font-size: 12px;
   font-family: "Montserrat-Bold";
   font-weight: 100;
-  padding: 10px;
-  background-color: white;
-  color: #1b1b1b;
-  border-radius: 5px;
-  transition: 0.2s all;
-}
-#publishers .pagination ul li a.active {
-  background-color: #58dd3a;
-  color: white;
-}
-#publishers .pagination ul li a {
-  display: flex;
-  align-self: baseline;
-}
-#publishers .pagination ul li a span {
-  height: 10px;
-  width: 10px;
-  border: 2px solid #d9d9d9;
-  border-left: 0;
-  border-bottom: 0;
-  transform: rotate(45deg) translateY(3px);
+  color: #b6b6b6;
+  line-height: 18px;
   display: block;
-  margin-left: 3px;
-  transition: 0.2s all;
+  margin-bottom: 7px;
+}
+#contact .form form .input-controll label span {
+  color: #ff0070;
 }
 
-#publishers .pagination ul li a:hover {
-  background-color: #58dd3a;
-  color: white;
+#contact .form form .input-controll input,
+#contact .form form .input-controll textarea {
+  width: 100%;
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 7px 7px 13px;
+  color: #1b1b1b;
+  font-family: "Montserrat-Bold";
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: 18px;
 }
-#publishers .pagination ul li a:hover span {
-  border-color: white;
+#contact .form form .input-controll input:focus,
+#contact .form form .input-controll textarea:focus {
+  outline: 2px solid #58dd3a;
+}
+#contact .form form .input-controll.data textarea {
+  resize: none;
+}
+#contact .form form input[type="submit"] {
+  background-color: #58dd3a;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-family: "Montserrat-Bold";
+  font-weight: 100;
+  line-height: 19px;
+  text-align: center;
+  border-radius: 6px;
+  padding: 9px 24px;
+  width: 140px;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.2s all;
+  outline: 0px solid #58dd3a;
+  display: inline;
+}
+#contact .form form input[type="submit"]:hover {
+  background-color: white;
+  color: #58dd3a;
+  outline: 1px solid #58dd3a;
 }
 
 /* section footer */
@@ -311,7 +272,6 @@ footer .sectionSecound .log svg {
   width: 60px;
   height: 20px;
 }
-
 @media (min-width: 768px) {
   /* header */
   header .sectionHeader {
@@ -326,40 +286,40 @@ footer .sectionSecound .log svg {
     position: absolute;
     top: 90px;
   }
-  /* section publishers */
-  #publishers .items {
-    justify-content: flex-start;
+  /* section contact */
+  #contact .headerTitle h3 {
+    font-size: 16px;
   }
-
-  #publishers .items .item {
-    width: 236px;
-    height: auto;
-    min-height: 204px;
-    border-radius: 10px;
-    margin-right: 16px;
+  #contact .form form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  #publishers .items .item .img {
-    max-width: 100%;
-    max-height: 100%;
+  #contact .form form .input-controll {
+    width: 48%;
   }
-  /* #publishers .items .item:last-child .img img,
-  #publishers .items .item:nth-of-type(11) .img img {
+  #contact .form form .input-controll.subject,
+  #contact .form form .input-controll.data {
     width: 100%;
-    height: 70%;
-  } */
-  #publishers .items .item h4 {
-    font-size: 14px;
-    line-height: 18px;
-    margin-bottom: 8px;
-    width: auto;
-    max-width: 70%;
   }
-  #publishers .items .item p {
-    font-size: 12px;
-    line-height: 15px;
-    padding: 3px 8px;
-    border-radius: 11px;
+  #contact .form form .input-controll label {
     margin-bottom: 11px;
+    font-size: 14px;
+  }
+  #contact .form form .input-controll input,
+  #contact .form form .input-controll textarea {
+    width: 100%;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px 10px 13px;
+    color: #1b1b1b;
+    font-family: "Montserrat-Bold";
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 0;
+    line-height: 18px;
   }
   /* section footer */
   footer .sectionFirst {
@@ -375,7 +335,6 @@ footer .sectionSecound .log svg {
     width: 90%;
   }
 }
-
 @media (min-width: 1024px) {
   .container {
     width: 1024px;
@@ -448,40 +407,39 @@ footer .sectionSecound .log svg {
   header .sectionMenu nav ul li:not(:last-child):hover:after {
     width: 32px;
   }
-  /* section publishers */
-  #publishers .titleheader {
-    margin: 52px 0 48px 0;
+  /* section  contact*/
+  #contact {
+    margin: 50px auto;
   }
-  #publishers .titleheader h3 {
+  #contact .headerTitle {
+    margin-bottom: 45px;
+  }
+  #contact .form {
+    padding: 39px 40px 23px 39px;
+  }
+  #contact .form form .input-controll {
+    width: 450px;
+    border-radius: 6px;
+    margin-bottom: 35px;
+  }
+  #contact .form form .input-controll.data {
+    margin-bottom: 21px;
+  }
+
+  #contact .form form .input-controll label {
+    margin-bottom: 13px;
+  }
+  #contact .form form .input-controll input,
+  #contact .form form .input-controll textarea {
+    padding: 15px 13px;
+  }
+  #contact .form form input[type="submit"] {
+    padding: 16px 48px;
+    width: auto;
+    margin: 0;
     font-size: 16px;
-    line-height: 19px;
   }
-  #publishers .titleheader svg {
-    width: 19px;
-    margin-right: 10px;
-  }
-  /* pagination  */
-  #publishers .pagination {
-    margin: 26px 0 82px 0;
-  }
-  #publishers .pagination ul .mobile {
-    display: block;
-  }
-  #publishers .pagination ul li a {
-    font-size: 12px;
-    padding: 15px 20px;
-  }
-  #publishers .pagination ul li a span {
-    margin-left: 6px;
-  }
-  #publishers .pagination ul li a span:nth-of-type(2) {
-    margin-left: 1px;
-    position: relative;
-    left: -5px;
-  }
-  /* footer Section */
-  footer {
-  }
+  /* section Footer */
   footer .sectionFirst {
     margin-top: 0;
     align-items: flex-start;
@@ -514,5 +472,14 @@ footer .sectionSecound .log svg {
   footer .sectionSecound .log svg {
     height: 37px;
     width: 82.82px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    width: 1160px;
+  }
+  /* section Contact */
+  #contact .form form .input-controll {
+    width: 521px;
   }
 }
