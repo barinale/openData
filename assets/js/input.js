@@ -21,8 +21,8 @@ inputCheck.addEventListener('blur',()=>{
 
 })
 
-console.log((1440-180-25)/2)
-console.log(597.5 *2)
+// console.log((1440-180-25)/2)
+// console.log(597.5 *2)
 
-console.log(779 - 108)
-console.log(617 + 25)
+// console.log(779 - 108)
+// console.log(617 + 25)

@@ -82,6 +82,7 @@ a {
 #login .leftSide .input-controll .input {
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 #login .leftSide .input-controll .input input {
   border: none;
@@ -311,6 +312,7 @@ a {
   #login .leftSide form input[type="submit"] {
     font-size: 16px;
     margin-bottom: 18px;
+    padding: 16px 56px;
   }
   #login .leftSide form > a {
     font-size: 14px;
@@ -322,7 +324,7 @@ a {
 }
 @media (min-width: 1400px) {
   #login {
-    grid-template-columns: 1fr 661px 661px 1fr;
+    grid-template-columns: 1fr 776px 664px 1fr;
     grid-template-areas: ". leftSide rightSide";
     background-color: #ffffff;
     position: relative;
@@ -332,19 +334,58 @@ a {
     width: 170.12px;
     height: auto;
     padding: 0;
-    margin-top: 46px;
+    margin-top: 49px;
+    margin-left: 108px;
     position: relative;
-    left: -5px;
+    left: 7px;
   }
   #login .leftSide .container {
-    padding: 0 194px 221px 31px;
+    padding: 0;
+    margin-left: 139px;
+    margin-right: 194px;
+    width: auto;
+  }
+  #login .leftSide .input-controll {
+    margin-bottom: 18px;
+    padding: 8px 15px 8px 13px;
+  }
+  #login .leftSide .input-controll .input label {
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+  #login .leftSide .input-controll > label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #login .leftSide .input-controll svg {
+    width: 26px;
+  }
+  #login .leftSide .check {
+    margin-top: 19px;
+    position: relative;
+    left: 4px;
+    margin-bottom: 17px;
+  }
+  #login .leftSide .check img {
+    margin-bottom: 8px;
+  }
+  #login .leftSide .check input {
+    padding: 15px 9px;
   }
   #login .rightSide .container {
     align-items: center;
     width: 100%;
+    padding: 0;
   }
   #login .rightSide img {
-    margin: 0;
-    width: 610.48px;
+    margin: 226px 25px 0 20px;
+    width: 629.48px;
+    height: auto;
   }
+  /* #login .rightSide img {
+    margin: 218px auto 0 auto;
+    width: 610.48px;
+    height: 364.75px;
+  } */
 }

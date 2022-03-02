@@ -44,7 +44,7 @@ header {
   background-size: cover;
   background-color: black;
 }
-header .logoHeader svg {
+header .logoHeader img {
   height: auto;
   width: 75.12px;
 }
@@ -407,10 +407,11 @@ header .sectionHeaderInfo .buttonRight:hover {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -7px;
+  bottom: -12px;
   width: 32px;
-  height: 3px;
+  height: 4px;
   background-color: #58dd3a;
+  border-radius: 6px;
 }
 /* section Topics */
 #topics {
@@ -950,7 +951,7 @@ footer .sectionSecound .log svg {
   header .sectionHeader {
     align-items: center;
   }
-  header .logoHeader svg {
+  header .logoHeader img {
     height: auto;
     width: 170.12px;
   }
@@ -1097,6 +1098,7 @@ footer .sectionSecound .log svg {
   }
   header .sectionHeaderInfo .minTitle h6 {
     font-size: 21px;
+    line-height: 25px;
   }
   header .sectionHeaderInfo .title h1 {
     font-size: 60px;
@@ -1264,5 +1266,142 @@ footer .sectionSecound .log svg {
   footer .sectionSecound .log svg {
     height: 37px;
     width: 82.82px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    width: 1195px;
+  }
+  #containerMain {
+    width: 1195px;
+    margin: auto;
+  }
+  /* section header */
+  header {
+    width: 100%;
+    min-height: 665px;
+    position: relative;
+    background-image: url("../images/Bitmap.png");
+    background-position: 88%;
+
+    background-repeat: no-repeat;
+    background-size: 139%;
+  }
+  header .sectionHeader {
+    /* justify-content: space-around; */
+  }
+  header .logoHeader {
+    margin-right: 114px;
+  }
+  header .sectionMenu {
+    margin: 0;
+    flex: 1;
+  }
+  header .sectionMenu nav {
+    width: 100%;
+  }
+  header .sectionMenu nav ul {
+    justify-content: flex-start;
+  }
+  header .sectionMenu nav ul li:not(:last-child) {
+    margin-right: 43px;
+  }
+  header .sectionMenu nav ul li:last-child {
+    margin-left: 125px;
+  }
+
+  header .sectionMenu nav ul li:last-child {
+    padding: 0;
+  }
+  /* section Topics */
+  /* title Section Global !!!!!!!!!!!!!!!!!!!!! */
+  .titleHeader h3:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    width: 32px;
+    height: 4px;
+    background-color: #58dd3a;
+    border-radius: 6px;
+  }
+
+  /* #topics > div {
+    width: 1024px;
+  } */
+
+  #topics .item:first-child .info svg {
+    height: auto;
+    width: 73.56px;
+  }
+
+  #topics .item:nth-of-type(2) .info svg {
+    height: auto;
+    width: 71.02px;
+  }
+
+  #topics .item:nth-of-type(3) .info svg {
+    height: auto;
+    width: 62.15px;
+  }
+
+  #topics .item:nth-of-type(4) .info svg {
+    height: auto;
+    width: 65.95px;
+  }
+
+  #topics .item:nth-of-type(5) .info svg {
+    height: auto;
+    width: 73.26px;
+  }
+
+  #topics .item:nth-of-type(6) .info svg {
+    height: auto;
+    width: 72.29px;
+  }
+
+  #topics .item:nth-of-type(7) .info svg {
+    height: auto;
+    width: 62.15px;
+  }
+  #topics .item:nth-of-type(8) .info svg {
+    height: auto;
+    width: 62.15px;
+  }
+
+  #topics .item:nth-of-type(9) .info svg {
+    height: auto;
+    width: 62.15px;
+  }
+
+  #topics .item:nth-of-type(10) .info svg {
+    height: auto;
+    width: 62.15px;
+  }
+
+  /* section search */
+  #searchInput {
+    width: 100%;
+  }
+  #searchInput .input {
+    width: 1160px;
+    margin: auto;
+  }
+  #topics {
+    margin: 20px auto 0 auto;
+    width: 100%;
+  }
+  #topics .items .item {
+    width: 208px;
+    min-height: 208px;
+    padding-top: 53px;
+    margin-right: 31px;
+    margin-bottom: 30px;
+  }
+  footer .sectionFirst {
+    width: 100%;
+  }
+  footer .sectionSecound .container {
+    width: 1195px;
   }
 }
