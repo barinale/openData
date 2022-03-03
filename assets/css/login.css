@@ -36,7 +36,7 @@ a {
   font-family: "Montserrat-Bold";
   font-weight: normal;
   font-size: 30px;
-  line-height: 57px;
+  line-height: 37px;
 }
 #login .leftSide h1 span {
   color: #58dd3a;
@@ -221,7 +221,7 @@ a {
     grid-area: leftSide;
   }
   #login .leftSide .container {
-    padding: 0 94px 0 50px;
+    padding: 0 44px 0 20px;
   }
   #login .leftSide > a img {
     width: 170.12px;
@@ -233,7 +233,6 @@ a {
   }
   #login .rightSide {
     grid-area: rightSide;
-    background-color: yellow;
     align-self: stretch;
 
     z-index: 100;
@@ -265,6 +264,7 @@ a {
   }
   #login .leftSide h1 {
     font-size: 47px;
+    line-height: 57px;
     margin-bottom: 9px;
   }
   #login .leftSide > div > p {

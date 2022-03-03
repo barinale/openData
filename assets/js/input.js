@@ -3,9 +3,13 @@ const input = document.querySelectorAll('.input-controll')
 input.forEach(element=>{
     element.querySelector('input').addEventListener('focus',()=>{
         element.style.outline="2px solid #58DD3A"
+        element.querySelector('label:first-child').style.color="#58DD3A";
+
     })
        element.querySelector('input').addEventListener('blur',()=>{
         element.style.outline="none"
+        element.querySelector('label:first-child').style.color="#9a9a9a";
+
     })
 })
 
