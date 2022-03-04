@@ -352,6 +352,8 @@ input[id="menuFilter"]:checked + .column1 #filter {
   cursor: pointer;
 }
 #filter input[id="topicsOption"]:checked + .item .option {
+  margin-top: 8px;
+  margin-bottom: 30px;
   max-height: 600px;
 }
 #filter input[id="topicsOption"]:checked + .item .titleFilter span {
@@ -359,6 +361,8 @@ input[id="menuFilter"]:checked + .column1 #filter {
 }
 #filter input[id="publishersOption"]:checked + .item .option {
   max-height: 600px;
+  margin-top: 8px;
+  margin-bottom: 17px;
 }
 #filter input[id="publishersOption"]:checked + .item .titleFilter span {
   transform: rotate(-135deg);
@@ -521,6 +525,7 @@ input[id="menuFilter"]:checked + .column1 #filter {
   background-color: white;
   padding: 6px 8px 6px 8px;
   border-radius: 6px;
+  text-transform: uppercase;
 }
 #dataset .items .item .info > span > span {
   background-color: #eeeeee;
@@ -866,6 +871,7 @@ footer .sectionSecound .log svg {
   }
   #filter .filterItems .item .titleFilter {
     padding: 10px 20px 16px 16px;
+    border-radius: 10px;
   }
   #filter .filterItems .item .titleFilter h3 {
     font-size: 14px;
@@ -1113,6 +1119,15 @@ footer .sectionSecound .log svg {
     grid-template-columns: 1fr 307px 852px 1fr;
     grid-template-areas: ". filter body .";
   }
+  #filter .filterItems .item {
+    margin-bottom: 8px;
+  }
+  #filter .filterItems .item .option {
+  }
+
+  #filter .filterItems .item:nth-of-type(2) .showMore {
+    padding: 10px 20px 7px 16px;
+  }
 
   .titleHeader {
     height: auto;
@@ -1122,15 +1137,57 @@ footer .sectionSecound .log svg {
     margin-bottom: 12px;
     background-color: #f9f9f9;
   }
+  .input {
+    margin-bottom: 20px;
+  }
   #dataset .container {
     padding-left: 36px;
     width: 100%;
   }
   #dataset .headerTitle {
-    padding: 20px 210px 0px 0px;
-    margin-bottom: 25px;
-  }
-  #dataset .headerTitle {
     margin-bottom: 32px;
+    padding: 20px 210px 0px 0px;
+  }
+  #dataset .dataFound {
+    margin-bottom: 30px;
+  }
+  #dataset .dataFound h4 {
+    font-size: 24px;
+  }
+  #dataset .items .item h4 {
+    margin-bottom: 10px;
+  }
+  #dataset .items .item p {
+    font-size: 14px;
+    padding: 0px 46.5px 0px 28px;
+    margin-bottom: 12px;
+  }
+  #dataset .items .item .info {
+    padding: 9px 0 9px 27px;
+  }
+  #dataset .items .item .info .button {
+    padding: 5px 0px 6px 6px;
+  }
+  #dataset .items .item .info .button svg {
+    height: auto;
+    width: 16px;
+    margin-right: 8px;
+  }
+
+  #dataset .items .item:first-child .info .button svg {
+    margin-right: 13px;
+  }
+  #dataset .items .item .info > span > span {
+    margin-left: 6px;
+  }
+  #dataset .pagination {
+    margin: 25px 0 64px 0;
+  }
+  #dataset .pagination ul li {
+    margin-right: 4px;
+  }
+  #dataset .pagination ul li a {
+    padding: 15px 20px 15px 18px;
+    border-radius: 8px;
   }
 }
